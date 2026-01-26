@@ -1,6 +1,6 @@
 import { SEO } from '../components/SEO'
 import { Hero } from '../sections/home/Hero'
-import { TrustBadges } from '../sections/home/TrustBadges'
+import { Information } from '../sections/home/Information'
 import { ServicesPreview } from '../sections/home/ServicesPreview'
 import { CaseHighlights } from '../sections/home/CaseHighlights'
 import { Testimonials } from '../sections/home/Testimonials'
@@ -12,7 +12,7 @@ export const HomePage = () => {
     <>
       <SEO pageKey="home" />
       <Hero />
-      <TrustBadges />
+      <Information />
       <ServicesPreview />
       <CaseHighlights />
       <Testimonials />

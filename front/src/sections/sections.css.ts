@@ -155,3 +155,95 @@ export const mapBox = style({
   backgroundColor: vars.color.surface,
   padding: '20px',
 })
+
+export const infoSection = style({
+  padding: `${vars.layout.sectionSpacing} 0`,
+})
+
+export const infoGrid = style({
+  display: 'grid',
+  gap: '24px',
+  alignItems: 'center',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+})
+
+export const infoMedia = style({
+  width: '100%',
+  aspectRatio: '4 / 3',
+  borderRadius: vars.radii.lg,
+  overflow: 'hidden',
+  border: `1px solid ${vars.color.border}`,
+  backgroundColor: vars.color.surface,
+  boxShadow: vars.shadow.sm,
+})
+
+export const infoImage = style({
+  width: '100%',
+  height: '100%',
+  objectFit: 'cover',
+})
+
+export const infoText = style({
+  display: 'grid',
+  gap: '12px',
+})
+
+export const infoTyping = style({
+  fontSize: 'clamp(16px, 1.6vw, 22px)',
+  color: vars.color.textMuted,
+})
+
+export const infoCenter = style({
+  height: '100vh',
+  display: 'grid',
+  placeItems: 'center',
+  textAlign: 'center',
+  gap: '3px',
+})
+
+export const infoPin = style({
+  position: 'relative',
+  height: '200vh',
+})
+
+export const infoSticky = style({
+  position: 'sticky',
+  top: 0,
+})
+
+export const infoWord = style({
+  fontSize: 'clamp(48px, 20vw, 140px)',
+  fontFamily: vars.typography.heading,
+  letterSpacing: '0.03em',
+  fontWeight: 900,
+  lineHeight: 0.3,
+  display: 'inline-block',
+  paddingBlock: '0.24em',
+  color: 'rgba(255,255,255,0.16)',
+  backgroundImage: 'linear-gradient(180deg, #850AFF, #850AFF)',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: '100% var(--fill, 0%)',
+  WebkitBackgroundClip: 'text',
+  backgroundClip: 'text',
+})
+
+export const infoWordFill = style({
+  backgroundSize: '100% var(--fill-word, 0%)',
+})
+
+export const infoDesc = style({
+  fontSize: 'clamp(20px, 3vw, 28px)',
+  fontWeight: 900,
+  color: vars.color.textMuted,
+  maxWidth: '640px',
+  margin: '0 auto',
+  opacity: 'var(--desc, 0.35)',
+})
+
+export const infoDescSmall = style({
+  fontSize: 'clamp(20px, 1.6vw, 20px)',
+  marginTop: '-85px',
+  fontWeight: 500,
+  color: vars.color.textMuted,
+  opacity: 'var(--desc, 0.35)',
+})

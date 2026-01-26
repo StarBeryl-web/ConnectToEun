@@ -6,7 +6,7 @@ export const vars = createGlobalTheme(':root', {
     brandStrong: '#0b2f4f',
     accent: '#FF850A',
     text: '#FF850A',
-    textMuted: '#52616b',
+    textMuted: '#30393f',
     background: '#0AFF85',
     surface: '#ffffff',
     border: '#e6e0d9',
