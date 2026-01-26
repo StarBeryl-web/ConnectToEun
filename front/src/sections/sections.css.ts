@@ -48,7 +48,7 @@ export const heroBody = style({
 })
 
 export const heroMuted = style({
-  color: 'rgba(255,255,255,0.7)',
+  color: 'rgba(255, 255, 255, 0.9)',
 })
 
 export const heroTagline = style({

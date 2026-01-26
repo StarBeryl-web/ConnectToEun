@@ -21,7 +21,7 @@ export const logo = style({
   alignItems: 'center',
   gap: '12px',
   fontFamily: vars.typography.heading,
-  fontSize: 'clamp(18px, 5vw, 30px)',
+  fontSize: 'clamp(14px, 6vw, 30px)',
   fontWeight: 700,
 })
 
@@ -41,9 +41,15 @@ export const navHidden = style({
 
 export const mobileToggle = style({
   display: 'none',
-  background: 'none',
-  border: 'none',
-  fontSize: '20px',
+  color: '#fff',
+  fontSize: '26px',
+  width: '44px',
+  height: '44px',
+  borderRadius: '999px',
+  backgroundColor: 'rgba(255,255,255,0.08)',
+  border: '1px solid rgba(255,255,255,0.2)',
+  alignItems: 'center',
+  justifyContent: 'center',
   '@media': {
     '(max-width: 925px)': {
       display: 'inline-flex',
@@ -60,13 +66,15 @@ export const desktopNav = style({
 })
 
 export const mobileNav = style({
-  display: 'none',
+  display: 'flex',
   flexDirection: 'column',
-  gap: '12px',
-  padding: '16px',
-  borderTop: `1px solid ${vars.color.border}`,
-  backgroundColor: vars.color.surface,
-  transition: 'opacity 200ms ease, transform 200ms ease',
+  gap: '18px',
+  padding: '80px 24px 32px',
+  height: '100%',
+  width: 'min(320px, 80vw)',
+  color: '#ffffff',
+  fontSize: '48px',
+  fontWeight: 700,
   '@media': {
     '(max-width: 925px)': {
       display: 'flex',
@@ -75,12 +83,55 @@ export const mobileNav = style({
 })
 
 export const mobileNavHidden = style({
-  opacity: 0.75,
-  transform: 'translateY(-8px)',
+  opacity: 0,
+  transform: 'translateX(-16px)',
+  pointerEvents: 'none',
+})
+
+export const mobileOverlay = style({
+  position: 'fixed',
+  inset: 0,
+  zIndex: 30,
+  background:
+    'linear-gradient(135deg, rgba(255,133,10,1),rgba(10,255,133,1) 55%, rgba(133,10,255,1))',
+  clipPath: 'circle(0% at 100% 0%)',
+  transition: 'clip-path 700ms ease',
+  pointerEvents: 'none',
+})
+
+export const mobileOverlayOpen = style({
+  clipPath: 'circle(150% at 100% 0%)',
+  pointerEvents: 'auto',
+})
+
+export const mobileOverlayClose = style({
+  position: 'absolute',
+  top: '16px',
+  right: '16px',
+  color: '#fff',
+  fontSize: '26px',
+  lineHeight: 1,
+  zIndex: 31,
+  display: 'inline-flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: '44px',
+  height: '44px',
+  borderRadius: '999px',
+  backgroundColor: 'rgba(255,255,255,0.08)',
+  border: '1px solid rgba(255,255,255,0.2)',
 })
 
 export const ctaGroup = style({
   display: 'flex',
   alignItems: 'center',
   gap: '12px',
+})
+
+export const ctaDesktop = style({
+  '@media': {
+    '(max-width: 925px)': {
+      display: 'none',
+    },
+  },
 })

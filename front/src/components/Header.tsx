@@ -1,15 +1,19 @@
 import { useEffect, useState } from 'react'
+import { VscChromeClose, VscMenu } from 'react-icons/vsc'
 import { siteConfig } from '../config/loadSiteConfig'
 import { Container } from './Container'
 import { primaryButton } from './ui.css'
 import {
   ctaGroup,
+  ctaDesktop,
   desktopNav,
   headerInner,
   headerWrap,
   logo,
   mobileNav,
-  mobileNavHidden,
+  mobileOverlay,
+  mobileOverlayOpen,
+  mobileOverlayClose,
   mobileToggle,
   nav,
   navHidden,
@@ -60,30 +64,41 @@ export const Header = () => {
               </a>
             ))}
           </nav>
-          <div className={ctaGroup}>
+          <div className={[ctaGroup, ctaDesktop].join(' ')}>
             <a className={primaryButton} href={siteConfig.contact.ctaHref}>
               {siteConfig.contact.ctaLabel}
             </a>
-            <button
-              className={mobileToggle}
-              onClick={() => setOpen((prev) => !prev)}
-              aria-expanded={open}
-              aria-label="모바일 메뉴"
-            >
-              ☰
-            </button>
           </div>
+          <button
+            className={mobileToggle}
+            onClick={() => setOpen((prev) => !prev)}
+            aria-expanded={open}
+            aria-label="모바일 메뉴"
+          >
+            {open ? <VscChromeClose /> : <VscMenu />}
+          </button>
         </div>
       </Container>
-      {open ? (
-        <div className={[mobileNav, !atTop ? mobileNavHidden : ''].filter(Boolean).join(' ')}>
+      <div
+        className={[mobileOverlay, open ? mobileOverlayOpen : ''].filter(Boolean).join(' ')}
+        onClick={() => setOpen(false)}
+      >
+        <button
+          type="button"
+          className={mobileOverlayClose}
+          aria-label="모바일 메뉴 닫기"
+          onClick={() => setOpen(false)}
+        >
+          <VscChromeClose />
+        </button>
+        <nav className={mobileNav} onClick={(event) => event.stopPropagation()}>
           {siteConfig.navigation.header.map((item) => (
             <a key={item.label} href={item.href} onClick={() => setOpen(false)}>
               {item.label}
             </a>
           ))}
-        </div>
-      ) : null}
+        </nav>
+      </div>
     </header>
   )
 }
