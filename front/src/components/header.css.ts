@@ -36,7 +36,7 @@ export const nav = style({
 
 export const navHidden = style({
   opacity: 1,
-  transform: 'translateY(-50px)',
+  transform: 'translateY(-60px)',
 })
 
 export const mobileToggle = style({
@@ -72,7 +72,7 @@ export const mobileNav = style({
   padding: '80px 24px 32px',
   height: '100%',
   width: 'min(320px, 80vw)',
-  color: '#ffffff',
+  color: '#850AFF',
   fontSize: '48px',
   fontWeight: 700,
   '@media': {
@@ -93,7 +93,7 @@ export const mobileOverlay = style({
   inset: 0,
   zIndex: 30,
   background:
-    'linear-gradient(135deg, rgba(255,133,10,1),rgba(10,255,133,1) 55%, rgba(133,10,255,1))',
+    'linear-gradient(135deg,rgba(10,255,133,1), rgba(133,10,255,1))',
   clipPath: 'circle(0% at 100% 0%)',
   transition: 'clip-path 700ms ease',
   pointerEvents: 'none',
@@ -108,7 +108,7 @@ export const mobileOverlayClose = style({
   position: 'absolute',
   top: '16px',
   right: '16px',
-  color: '#fff',
+  color: '#ffffff',
   fontSize: '26px',
   lineHeight: 1,
   zIndex: 31,

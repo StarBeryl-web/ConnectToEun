@@ -156,6 +156,8 @@ export const mapBox = style({
   padding: '20px',
 })
 
+// information
+
 export const infoSection = style({
   padding: `${vars.layout.sectionSpacing} 0`,
 })
@@ -246,4 +248,194 @@ export const infoDescSmall = style({
   fontWeight: 500,
   color: vars.color.textMuted,
   opacity: 'var(--desc, 0.35)',
+})
+
+// ServicesPreview 
+
+export const servicesShowcase = style({
+  borderRadius: vars.radii.lg,
+  border: '1px solid rgba(255,255,255,0.08)',
+  padding: 'clamp(24px, 4vw, 40px)',
+  background:
+    'linear-gradient(180deg, rgba(16,18,26,0.75), rgba(16,18,26,0.9)), radial-gradient(60% 80% at 10% 0%, rgba(34,39,52,0.5), transparent 70%)',
+  color: '#f8fafc',
+  boxShadow: '0 18px 40px rgba(0,0,0,0.25)',
+})
+
+export const servicesGrid = style({
+  display: 'grid',
+  gap: '24px',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+})
+
+export const serviceCard = style({
+  position: 'relative',
+  padding: '24px',
+  borderRadius: '28px',
+  backgroundColor: 'rgba(255,255,255,0.06)',
+  border: '1px solid rgba(255,255,255,0.12)',
+  overflow: 'hidden',
+  display: 'grid',
+  gap: '12px',
+})
+
+export const serviceGlow = style({
+  position: 'absolute',
+  inset: 0,
+  background:
+    'linear-gradient(120deg, rgba(255,255,255,0.08), rgba(255,255,255,0.0) 55%)',
+  opacity: 0.9,
+  pointerEvents: 'none',
+})
+
+export const serviceLine = style({
+  width: '2px',
+  height: '100%',
+  backgroundColor: 'rgba(255,255,255,0.5)',
+})
+
+export const serviceMeta = style({
+  fontSize: '14px',
+  letterSpacing: '0.08em',
+  textTransform: 'uppercase',
+  color: 'rgba(255,255,255,0.7)',
+})
+
+export const serviceTitle = style({
+  fontSize: 'clamp(20px, 2.2vw, 26px)',
+  fontWeight: 600,
+  lineHeight: 1.3,
+})
+
+export const serviceBody = style({
+  fontSize: '15px',
+  lineHeight: 1.8,
+  color: 'rgba(255,255,255,0.78)',
+})
+
+export const servicesPin = style({
+  position: 'relative',
+  height: '300vh',
+})
+
+export const servicesSticky = style({
+  position: 'sticky',
+  top: 0,
+  minHeight: '100vh',
+  display: 'grid',
+  alignItems: 'center',
+})
+
+export const servicesLayout = style({
+  display: 'grid',
+  gap: '32px',
+  alignItems: 'center',
+  gridTemplateColumns: 'minmax(0, 1fr) minmax(220px, 360px)',
+  '@media': {
+    '(max-width: 720px)': {
+      gridTemplateColumns: 'minmax(0, 1fr) minmax(180px, 240px)',
+      gap: '20px',
+    },
+  },
+})
+
+export const servicesAccent = style({
+  width: '3px',
+  height: '100%',
+  backgroundColor: vars.color.brand,
+  borderRadius: '999px',
+})
+
+export const servicesEyebrow = style({
+  fontSize: '14px',
+  letterSpacing: '0.18em',
+  textTransform: 'uppercase',
+  color: vars.color.textMuted,
+})
+
+export const servicesTitle = style({
+  fontSize: 'clamp(28px, 3vw, 40px)',
+  fontWeight: 700,
+})
+
+export const servicesBody = style({
+  fontSize: 'clamp(16px, 1.6vw, 20px)',
+  color: vars.color.textMuted,
+  lineHeight: 1.8,
+})
+
+export const servicesCard = style({
+  display: 'grid',
+  gap: '12px',
+  transition: 'opacity 300ms ease, transform 300ms ease',
+})
+
+export const servicesRow = style({
+  display: 'grid',
+  gridTemplateColumns: 'auto 1fr',
+  gap: '16px',
+  alignItems: 'stretch',
+})
+
+export const servicesNumber = style({
+  width: '44px',
+  height: '44px',
+  borderRadius: '999px',
+  display: 'grid',
+  placeItems: 'center',
+  fontSize: '16px',
+  fontWeight: 700,
+  color: '#fff',
+  background:
+    'linear-gradient(135deg, rgba(133,10,255,0.9), rgba(10,255,133,0.7))',
+})
+
+export const servicesNumberStack = style({
+  display: 'grid',
+  gridTemplateRows: 'auto 1fr',
+  justifyItems: 'center',
+  gap: '12px',
+})
+
+export const servicesLine = style({
+  width: '2px',
+  height: '100%',
+  backgroundColor: 'rgba(133,10,255,0.7)',
+  borderRadius: '999px',
+})
+
+export const servicesMetaRow = style({
+  display: 'flex',
+  alignItems: 'center',
+  gap: '12px',
+})
+
+export const servicesCardHidden = style({
+  opacity: 0,
+  transform: 'translateY(16px)',
+  pointerEvents: 'none',
+})
+
+export const servicesCardActive = style({
+  opacity: 1,
+  transform: 'translateY(0)',
+})
+
+export const servicesVisual = style({
+  width: '100%',
+  aspectRatio: '1 / 1',
+  borderRadius: '999px',
+  marginLeft: 'auto',
+  overflow: 'hidden',
+  background:
+    'radial-gradient(circle at 30% 30%, rgba(255,255,255,0.5), rgba(255,255,255,0.05) 60%), radial-gradient(circle at 70% 70%, rgba(0,0,0,0.55), rgba(0,0,0,0.9) 70%)',
+  boxShadow: '0 30px 60px rgba(0,0,0,0.35)',
+  display: 'grid',
+  placeItems: 'center',
+})
+
+export const servicesVisualImage = style({
+  width: '100%',
+  height: '100%',
+  objectFit: 'cover',
 })

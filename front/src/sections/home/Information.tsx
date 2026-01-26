@@ -60,14 +60,14 @@ export const Information = () => {
                 ONE
               </span>
               <p className={infoDesc}>
-                기획 · 디자인 · 개발 한 사람이 끝까지.
+                기획 · 디자인 · 개발 시작부터 끝까지.
               </p>
               <p className={infoDescSmall}>
                 단계는 줄이고 속도는 높였습니다.
                 <br />
                 한 번의 미팅으로 방향을 정리하여 
                 <br />
-                불필요한 과정과 비용을 줄여드립니다
+                복잡한 과정과 비용을 줄여드립니다
               </p>
             </div>
           </div>

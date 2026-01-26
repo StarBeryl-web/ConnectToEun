@@ -9,6 +9,7 @@ export type ServiceItem = {
   title: string
   summary: string
   icon?: string
+  image?: string
   category: string
   bullets: string[]
   link?: string

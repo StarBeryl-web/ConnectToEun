@@ -12,36 +12,6 @@ export const siteOverrides: SiteConfigOverride = {
     heroImage: '',
     ogImage: ''
   },
-  theme: {
-    colors: {
-      brand: '#2159C5',
-      brandStrong: '#173B86',
-      accent: '#FF7A00',
-      text: '#0B1220',
-      textMuted: '#4B5563',
-      background: '#F5F8FF',
-      surface: '#FFFFFF',
-      border: '#DFE7F3',
-    },
-    typography: {
-      body: '',
-      heading: ''
-    },
-    radii: {
-      sm: '',
-      md: '',
-      lg: ''
-    },
-    shadow: {
-      sm: '',
-      md: ''
-    },
-    layout: {
-      maxWidth: '',
-      gutter: '',
-      sectionSpacing: ''
-    }
-  },
   contact: {
     phone: '010-0000-0000',
     email: 'helen0012@naver.com',
@@ -65,11 +35,10 @@ export const siteOverrides: SiteConfigOverride = {
   },
   navigation: {
     header: [
-      { label: '회사소개', href: '#/about' },
-      { label: '서비스', href: '#/services' },
-      { label: '포트폴리오', href: '#/portfolio' },
-      { label: '블로그', href: '#/blog' },
-      { label: '문의', href: '#/contact' },
+      { label: 'About', href: '#/about' },
+      { label: 'Service', href: '#/services' },
+      { label: 'Portfolio', href: '#/portfolio' },
+      { label: 'Blog', href: '#/blog' }
     ],
     footer: []
   },
