@@ -72,7 +72,7 @@ export const mobileNav = style({
   padding: '80px 24px 32px',
   height: '100%',
   width: 'min(320px, 80vw)',
-  color: '#850AFF',
+  color: '#ffffff',
   fontSize: '48px',
   fontWeight: 700,
   '@media': {
@@ -93,7 +93,7 @@ export const mobileOverlay = style({
   inset: 0,
   zIndex: 30,
   background:
-    'linear-gradient(135deg,rgba(10,255,133,1), rgba(133,10,255,1))',
+    'linear-gradient(135deg, rgba(133,10,255,1), rgb(36, 0, 73)) 55%',
   clipPath: 'circle(0% at 100% 0%)',
   transition: 'clip-path 700ms ease',
   pointerEvents: 'none',

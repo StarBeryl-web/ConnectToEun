@@ -5,8 +5,8 @@ export const sitePreset = 'default'
 export const siteOverrides: SiteConfigOverride = {
   brand: {
     name: 'CONNECT 2 EUN',
-    tagline: '가치를 연결하는 빛나는 기술',
-    description: 'Connect 2 EUN는 기획, 디자인, 기술을 한 번에 연결해드립니다.',
+    tagline: 'AI 시대일수록 본질은 더 선명해야 합니다.',
+    description: '기술은 문제를 해결하는 방법 중 하나입니다. 핵심은 전달 입니다.',
     logoText: 'CONNECT 2 EUN',
     logoImage: '',
     heroImage: '',
@@ -14,7 +14,7 @@ export const siteOverrides: SiteConfigOverride = {
   },
   contact: {
     phone: '010-0000-0000',
-    email: 'helen0012@naver.com',
+    email: 'connect2eun@gmail.com',
     ctaLabel: '프로젝트 문의',
     ctaHref: '#/contact',
     // address: '서울특별시 영등포구 여의대로 100',
@@ -54,7 +54,7 @@ export const siteOverrides: SiteConfigOverride = {
         title: '서비스 제목 1',
         summary: '서비스 설명을 입력하세요.',
         icon: 'Compass',
-        category: 'Strategy',
+        category: 'Product Management',
         bullets: ['포인트 1', '포인트 2', '포인트 3'],
         link: 'https://example.com',
       },
@@ -193,4 +193,10 @@ export const siteOverrides: SiteConfigOverride = {
     kakaoMapEnv: 'VITE_KAKAO_MAP_KEY',
     contactWebhookEnv: 'VITE_CONTACT_WEBHOOK_URL',
   },
+  seo: {
+    siteName: 'CONNECT2EUN',
+    titleTemplate: '%s | CONNECT2EUN',
+    description: '가치를 연결하는 빛나는 기술',
+    ogImage: ''
+  }
 }

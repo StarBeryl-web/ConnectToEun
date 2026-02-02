@@ -236,18 +236,37 @@ export const infoWordFill = style({
 export const infoDesc = style({
   fontSize: 'clamp(20px, 3vw, 28px)',
   fontWeight: 900,
-  color: vars.color.textMuted,
+  color: 'rgba(255,255,255,0.2)',
   maxWidth: '640px',
   margin: '0 auto',
   opacity: 'var(--desc, 0.35)',
+  backgroundImage: 'linear-gradient(180deg, #ffffff, #ffffff)',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: '100% var(--desc-fill, 0%)',
+  WebkitBackgroundClip: 'text',
+  backgroundClip: 'text',
 })
 
 export const infoDescSmall = style({
   fontSize: 'clamp(20px, 1.6vw, 20px)',
   marginTop: '-85px',
   fontWeight: 500,
-  color: vars.color.textMuted,
+  color: 'rgba(255,255,255,0.2)',
   opacity: 'var(--desc, 0.35)',
+  backgroundImage: 'linear-gradient(180deg, #ffffff, #ffffff)',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: '100% var(--desc-fill, 0%)',
+  WebkitBackgroundClip: 'text',
+  backgroundClip: 'text',
+})
+
+export const infoDescLine = style({
+  display: 'block',
+  backgroundImage: 'linear-gradient(180deg, #ffffff, #ffffff)',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: '100% var(--line-fill, 0%)',
+  WebkitBackgroundClip: 'text',
+  backgroundClip: 'text',
 })
 
 // ServicesPreview 
