@@ -31,7 +31,7 @@ export const heroGrid = style({
   gap: '28px',
   alignItems: 'center',
   alignContent: 'center',
-  paddingTop: '50px',
+  paddingTop: '80px',
   gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
   position: 'relative',
   zIndex: 2,
@@ -520,7 +520,7 @@ export const servicesNumberStack = style({
 export const servicesLine = style({
   width: '2px',
   height: '100%',
-  backgroundColor: '#d064fb',
+  backgroundColor: '#8564fb',
   borderRadius: '999px',
 })
 

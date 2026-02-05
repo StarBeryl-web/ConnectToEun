@@ -74,6 +74,7 @@ export const siteOverrides: SiteConfigOverride = {
           '가독성 중심 레이아웃·정보 구조 설계',
           '포트폴리오/후기/연락처 등 신뢰 요소 강화',
         ],
+        image: '/branding/DE_ill.png',
       },
       {
         id: 'launch',
@@ -87,6 +88,7 @@ export const siteOverrides: SiteConfigOverride = {
           '문의/예약/FAQ 등 운영 자동화 포인트 적용',
           '유입·이탈·클릭 기반 개선 포인트 제공',
   ],
+        image: '/branding/CO_ill.png',
       },
     ],
     portfolio: [
