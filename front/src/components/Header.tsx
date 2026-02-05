@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { VscChromeClose, VscMenu } from 'react-icons/vsc'
 import { siteConfig } from '../config/loadSiteConfig'
+import { withBase } from '../utils/asset'
 import { Container } from './Container'
 import { primaryButton } from './ui.css'
 import {
@@ -53,7 +54,7 @@ export const Header = () => {
         <div className={headerInner}>
           <a href="#/" className={logo}>
             {siteConfig.brand.logoImage ? (
-              <img src={siteConfig.brand.logoImage} alt={siteConfig.brand.name} height={32} />
+              <img src={withBase(siteConfig.brand.logoImage)} alt={siteConfig.brand.name} height={32} />
             ) : null}
             <span>{siteConfig.brand.logoText}</span>
           </a>

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { siteConfig } from '../../config/loadSiteConfig'
+import { withBase } from '../../utils/asset'
 import { Container } from '../../components/Container'
 import { Section } from '../../components/Section'
 import {
@@ -79,7 +80,7 @@ export const ServicesPreview = () => {
                     {service.image ? (
                       <img
                         className={servicesVisualImage}
-                        src={service.image}
+                        src={withBase(service.image)}
                         alt={service.title}
                       />
                     ) : null}
@@ -122,7 +123,7 @@ export const ServicesPreview = () => {
                   {items[index]?.image ? (
                     <img
                       className={servicesVisualImage}
-                      src={items[index].image}
+                      src={withBase(items[index].image)}
                       alt={items[index].title}
                     />
                   ) : null}

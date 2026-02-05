@@ -13,7 +13,7 @@ export const siteOverrides: SiteConfigOverride = {
     ogImage: ''
   },
   contact: {
-    phone: '010-0000-0000',
+    phone: '',
     email: 'connect2eun@gmail.com',
     ctaLabel: '첫 미팅 예약',
     ctaHref: '#/contact',

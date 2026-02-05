@@ -4,6 +4,7 @@ import { Container } from '../../components/Container'
 import { Section } from '../../components/Section'
 import { card, gridThree, pill } from '../../components/ui.css'
 import { sectionEyebrow, sectionTitle } from '../../styles/layout.css'
+import { withBase } from '../../utils/asset'
 
 export const PortfolioList = () => {
   const [activeTag, setActiveTag] = useState('전체')
@@ -33,7 +34,7 @@ export const PortfolioList = () => {
         <div className={gridThree}>
           {filtered.map((item) => (
             <a key={item.id} href={item.href} className={card} target="_blank" rel="noreferrer">
-              <img src={item.coverImage} alt={item.title} style={{ borderRadius: '12px' }} />
+              <img src={withBase(item.coverImage)} alt={item.title} style={{ borderRadius: '12px' }} />
               <span className={pill}>{item.category}</span>
               <h3>{item.title}</h3>
               <p>{item.summary}</p>
