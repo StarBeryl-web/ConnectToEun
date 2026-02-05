@@ -11,13 +11,18 @@ export const hero = style({
 export const heroWrap = style({
   position: 'relative',
   overflow: 'hidden',
-  borderRadius: vars.radii.lg,
+  borderRadius: '150px',
+  minHeight: 'clamp(150px, 90svh, 200px)',
   border: `1px solid ${vars.color.border}`,
-  minHeight: 'clamp(520px, 90svh, 600px)',
   padding: 'clamp(28px, 5vw, 56px)',
   background:
     'linear-gradient(120deg, rgba(133,10,255,0.16), rgba(255,133,10,0.12) 40%, rgba(10,255,133,0.12) 80%), linear-gradient(180deg, rgba(8,12,24,0.72), rgba(8,12,24,0.92))',
   boxShadow: vars.shadow.md,
+})
+
+export const heroShell = style({
+  position: 'relative',
+  paddingBottom: '64px',
 })
 
 export const heroGrid = style({
@@ -34,17 +39,20 @@ export const heroCopy = style({
   color: 'rgba(255,255,255,0.92)',
   display: 'grid',
   gap: '14px',
+  textAlign: 'center',
+  justifyItems: 'center',
 })
 
 export const heroTitle = style({
-  fontSize: 'clamp(32px, 5vw, 70px)',
+  fontSize: 'clamp(18px, 5vw, 60px)',
   lineHeight: 1.05,
   letterSpacing: '-0.02em',
 })
 
 export const heroBody = style({
-  fontSize: 'clamp(14px, 1.4vw, 28px)',
+  fontSize: 'clamp(10px, 1.3vw, 50px)',
   lineHeight: 1.6,
+  whiteSpace: 'pre-line',
 })
 
 export const heroMuted = style({
@@ -52,7 +60,7 @@ export const heroMuted = style({
 })
 
 export const heroTagline = style({
-  fontSize: 'clamp(20px, 2.5vw, 35px)',
+  fontSize: 'clamp(20px, 2.5vw, 50px)',
   letterSpacing: '0.12em',
   textTransform: 'uppercase',
 })
@@ -65,6 +73,63 @@ export const heroGlow = style({
   filter: 'blur(10px)',
   opacity: 0.9,
   zIndex: 1,
+})
+
+const scrollWheel = keyframes({
+  '0%': { transform: 'translateY(0)', opacity: 0.9 },
+  '70%': { transform: 'translateY(10px)', opacity: 0.2 },
+  '100%': { transform: 'translateY(12px)', opacity: 0 },
+})
+
+const scrollArrow = keyframes({
+  '0%': { transform: 'translateY(0)', opacity: 0.4 },
+  '60%': { transform: 'translateY(6px)', opacity: 1 },
+  '100%': { transform: 'translateY(10px)', opacity: 0 },
+})
+
+export const heroScroll = style({
+  position: 'absolute',
+  left: '50%',
+  bottom: '-60px',
+  transform: 'translateX(-50%)',
+  zIndex: 10,
+  display: 'grid',
+  gap: '8px',
+  placeItems: 'center',
+  color: 'rgba(255, 255, 255, 0.75)',
+  fontSize: '11px',
+  letterSpacing: '0.2em',
+  textTransform: 'uppercase',
+  pointerEvents: 'none',
+})
+
+export const heroScrollMouse = style({
+  width: '26px',
+  height: '40px',
+  borderRadius: '999px',
+  border: '1px solid rgba(255, 255, 255, 0.5)',
+  display: 'grid',
+  justifyItems: 'center',
+  paddingTop: '6px',
+  backgroundColor: 'rgba(8, 12, 24, 0.25)',
+  backdropFilter: 'blur(4px)',
+})
+
+export const heroScrollWheel = style({
+  width: '4px',
+  height: '8px',
+  borderRadius: '999px',
+  backgroundColor: 'rgba(255, 255, 255, 0.8)',
+  animation: `${scrollWheel} 1.6s ease-in-out infinite`,
+})
+
+export const heroScrollArrow = style({
+  width: '8px',
+  height: '8px',
+  borderRight: '1px solid rgba(255, 255, 255, 0.7)',
+  borderBottom: '1px solid rgba(255, 255, 255, 0.7)',
+  transform: 'rotate(45deg)',
+  animation: `${scrollArrow} 1.6s ease-in-out infinite`,
 })
 
 const wave = keyframes({
@@ -222,7 +287,7 @@ export const infoWord = style({
   display: 'inline-block',
   paddingBlock: '0.24em',
   color: 'rgba(255,255,255,0.16)',
-  backgroundImage: 'linear-gradient(180deg, #850AFF, #850AFF)',
+  backgroundImage: 'linear-gradient(180deg, #d064fb, #ac02ef)',
   backgroundRepeat: 'no-repeat',
   backgroundSize: '100% var(--fill, 0%)',
   WebkitBackgroundClip: 'text',
@@ -310,7 +375,7 @@ export const serviceGlow = style({
 export const serviceLine = style({
   width: '2px',
   height: '100%',
-  backgroundColor: 'rgba(255,255,255,0.5)',
+  backgroundColor: 'rgba(235, 225, 225, 0.5)',
 })
 
 export const serviceMeta = style({
@@ -343,6 +408,11 @@ export const servicesSticky = style({
   minHeight: '100vh',
   display: 'grid',
   alignItems: 'center',
+  '@media': {
+    '(max-width: 400px)': {
+      position: 'relative',
+    },
+  },
 })
 
 export const servicesLayout = style({
@@ -350,10 +420,35 @@ export const servicesLayout = style({
   gap: '32px',
   alignItems: 'center',
   gridTemplateColumns: 'minmax(0, 1fr) minmax(220px, 360px)',
+  overflow: 'hidden',
   '@media': {
     '(max-width: 720px)': {
       gridTemplateColumns: 'minmax(0, 1fr) minmax(180px, 240px)',
       gap: '20px',
+    },
+    '(max-width: 400px)': {
+      gridTemplateColumns: 'minmax(0, 1fr)',
+    },
+  },
+})
+
+export const servicesMobileList = style({
+  display: 'grid',
+  gap: '48px',
+})
+
+export const servicesItemLayout = style({
+  display: 'grid',
+  gap: '24px',
+  alignItems: 'center',
+  gridTemplateColumns: 'minmax(0, 1fr) minmax(220px, 360px)',
+  '@media': {
+    '(max-width: 720px)': {
+      gridTemplateColumns: 'minmax(0, 1fr) minmax(180px, 240px)',
+      gap: '18px',
+    },
+    '(max-width: 650px)': {
+      gridTemplateColumns: 'minmax(0, 1fr)',
     },
   },
 })
@@ -366,19 +461,20 @@ export const servicesAccent = style({
 })
 
 export const servicesEyebrow = style({
-  fontSize: '14px',
+  fontSize: 'clamp(12px, 1.2vw, 14px)',
   letterSpacing: '0.18em',
   textTransform: 'uppercase',
   color: vars.color.textMuted,
 })
 
 export const servicesTitle = style({
-  fontSize: 'clamp(28px, 3vw, 40px)',
+  fontSize: 'clamp(22px, 2.6vw, 40px)',
   fontWeight: 700,
+  lineHeight: 1.2,
 })
 
 export const servicesBody = style({
-  fontSize: 'clamp(16px, 1.6vw, 20px)',
+  fontSize: 'clamp(14px, 1.4vw, 20px)',
   color: vars.color.textMuted,
   lineHeight: 1.8,
 })
@@ -394,6 +490,8 @@ export const servicesRow = style({
   gridTemplateColumns: 'auto 1fr',
   gap: '16px',
   alignItems: 'stretch',
+  position: 'relative',
+  zIndex: 1,
 })
 
 export const servicesNumber = style({
@@ -402,11 +500,11 @@ export const servicesNumber = style({
   borderRadius: '999px',
   display: 'grid',
   placeItems: 'center',
-  fontSize: '16px',
+  fontSize: 'clamp(16px, 1.6vw, 18px)',
   fontWeight: 700,
-  color: '#fff',
+  color: '#000000',
   background:
-    'linear-gradient(135deg, rgba(133,10,255,0.9), rgba(10,255,133,0.7))',
+    'linear-gradient(135deg, #d064fb, #64FBD0)',
 })
 
 export const servicesNumberStack = style({
@@ -419,7 +517,7 @@ export const servicesNumberStack = style({
 export const servicesLine = style({
   width: '2px',
   height: '100%',
-  backgroundColor: 'rgba(133,10,255,0.7)',
+  backgroundColor: '#d064fb',
   borderRadius: '999px',
 })
 
@@ -442,19 +540,46 @@ export const servicesCardActive = style({
 
 export const servicesVisual = style({
   width: '100%',
-  aspectRatio: '1 / 1',
-  borderRadius: '999px',
   marginLeft: 'auto',
-  overflow: 'hidden',
-  background:
-    'radial-gradient(circle at 30% 30%, rgba(255,255,255,0.5), rgba(255,255,255,0.05) 60%), radial-gradient(circle at 70% 70%, rgba(0,0,0,0.55), rgba(0,0,0,0.9) 70%)',
-  boxShadow: '0 30px 60px rgba(0,0,0,0.35)',
   display: 'grid',
   placeItems: 'center',
+  '@media': {
+    '(max-width: 720px)': {
+      position: 'absolute',
+      inset: 0,
+      zIndex: 0,
+      pointerEvents: 'none',
+    },
+  },
+})
+
+export const servicesVisualBox = style({
+  width: '100%',
+  aspectRatio: '4 / 3',
+  borderRadius: vars.radii.lg,
+  overflow: 'hidden',
+  backgroundColor: 'rgba(0,0,0,0.2)',
+  '@media': {
+    '(max-width: 720px)': {
+      aspectRatio: 'auto',
+      width: '100%',
+      height: '100%',
+      borderRadius: '0px',
+      backgroundColor: 'rgba(0,0,0,0)',
+    },
+  },
 })
 
 export const servicesVisualImage = style({
   width: '100%',
   height: '100%',
   objectFit: 'cover',
+  overflow: 'hidden',
+  transition: 'opacity 300ms ease, filter 300ms ease',
+  '@media': {
+    '(max-width: 720px)': {
+      opacity: 0,
+      filter: 'blur(6px)',
+    },
+  },
 })

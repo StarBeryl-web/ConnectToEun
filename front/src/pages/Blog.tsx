@@ -4,6 +4,7 @@ import { Section } from '../components/Section'
 import { siteConfig } from '../config/loadSiteConfig'
 import { card, gridTwo, pill } from '../components/ui.css'
 import { sectionEyebrow, sectionTitle } from '../styles/layout.css'
+import { ServerCostSummary } from '../sections/blog/ServerCostSummary'
 
 export const BlogPage = () => {
   return (
@@ -31,6 +32,7 @@ export const BlogPage = () => {
           </div>
         </Container>
       </Section>
+      <ServerCostSummary />
     </>
   )
 }

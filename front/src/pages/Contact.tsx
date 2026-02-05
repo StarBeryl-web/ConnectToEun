@@ -1,9 +1,7 @@
 import { SEO } from '../components/SEO'
 import { Container } from '../components/Container'
 import { Section } from '../components/Section'
-import { ContactForm } from '../sections/contact/ContactForm'
-import { ContactInfo } from '../sections/contact/ContactInfo'
-import { PrivacyConsent } from '../sections/contact/PrivacyConsent'
+import { EstimateQuote } from '../components/EstimateQuote'
 import { gridTwo } from '../components/ui.css'
 
 export const ContactPage = () => {
@@ -13,11 +11,7 @@ export const ContactPage = () => {
       <Section id="contact">
         <Container>
           <div className={gridTwo}>
-            <ContactForm />
-            <div style={{ display: 'grid', gap: '16px' }}>
-              <ContactInfo />
-              <PrivacyConsent />
-            </div>
+            <EstimateQuote />
           </div>
         </Container>
       </Section>

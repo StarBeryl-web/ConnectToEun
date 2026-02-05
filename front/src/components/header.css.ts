@@ -4,7 +4,7 @@ import { vars } from '../styles/theme.css'
 export const headerWrap = style({
   position: 'sticky',
   top: 0,
-  zIndex: 20,
+  zIndex: 60,
   backgroundColor: 'transparent',
 })
 
@@ -93,7 +93,7 @@ export const mobileOverlay = style({
   inset: 0,
   zIndex: 30,
   background:
-    'linear-gradient(135deg, rgba(133,10,255,1), rgb(36, 0, 73)) 55%',
+    'linear-gradient(135deg, #d064fb, #3a0051) 35%',
   clipPath: 'circle(0% at 100% 0%)',
   transition: 'clip-path 700ms ease',
   pointerEvents: 'none',

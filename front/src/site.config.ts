@@ -4,9 +4,9 @@ export const sitePreset = 'default'
 
 export const siteOverrides: SiteConfigOverride = {
   brand: {
-    name: 'CONNECT 2 EUN',
-    tagline: 'AI 시대일수록 본질은 더 선명해야 합니다.',
-    description: '기술은 문제를 해결하는 방법 중 하나입니다. 핵심은 전달 입니다.',
+    name: 'CONNECT 2 EUN : AI PlayBook',
+    tagline: '',
+    description: 'AI를 실무에 맞게 적용하고\nWEB을 디지털 자산으로 만듭니다',
     logoText: 'CONNECT 2 EUN',
     logoImage: '',
     heroImage: '',
@@ -15,7 +15,7 @@ export const siteOverrides: SiteConfigOverride = {
   contact: {
     phone: '010-0000-0000',
     email: 'connect2eun@gmail.com',
-    ctaLabel: '프로젝트 문의',
+    ctaLabel: '첫 미팅 예약',
     ctaHref: '#/contact',
     // address: '서울특별시 영등포구 여의대로 100',
     // businessInfo: '커넥트투은 | 사업자등록번호 000-00-00000',
@@ -51,28 +51,42 @@ export const siteOverrides: SiteConfigOverride = {
     services: [
       {
         id: 'brand-strategy',
-        title: '서비스 제목 1',
-        summary: '서비스 설명을 입력하세요.',
+        title: '기회를 설계하는 기획',
+        summary:
+          '데이터를 근거로 방향을 잡습니다. 타겟·메시지·구조를 정리해 “문의/예약이 가능한 흐름”을 설계해요.',
         icon: 'Compass',
-        category: 'Product Management',
-        bullets: ['포인트 1', '포인트 2', '포인트 3'],
-        link: 'https://example.com',
+        category: 'Product Strategy',
+        bullets: [
+          '타겟/포지셔닝/핵심 메시지 1장 정리',
+          '페이지 구조·동선·CTA 우선순위 설계',
+          '기능 범위/일정/예산을 현실적으로 고정'],
+        image: '/branding/PM_ill.png',
       },
       {
         id: 'visual-identity',
-        title: '서비스 제목 2',
-        summary: '서비스 설명을 입력하세요.',
+        title: '신뢰를 만드는 Design',
+        summary:
+          '첫 방문 5초 안에 이해되고 믿기 쉬운 화면을 만듭니다. 브랜드 톤과 정보 우선순위를 깔끔하게 정리해요.',
         icon: 'Sparkles',
         category: 'Design',
-        bullets: ['포인트 1', '포인트 2', '포인트 3'],
+        bullets: [
+          '톤앤매너(색/폰트/이미지) + 카피 톤 정리',
+          '가독성 중심 레이아웃·정보 구조 설계',
+          '포트폴리오/후기/연락처 등 신뢰 요소 강화',
+        ],
       },
       {
         id: 'launch',
-        title: '서비스 제목 3',
-        summary: '서비스 설명을 입력하세요.',
+        title: '빠르게 만들고, 안정적으로 런칭',
+        summary:
+          'Engineering과 AI를 실무에 맞게 적용해 빠르게 출시합니다. 오픈 이후 운영/개선까지 이어지게 구축해요.',
         icon: 'Rocket',
-        category: 'Execution',
-        bullets: ['포인트 1', '포인트 2', '포인트 3'],
+        category: 'Engineering & AI',
+        bullets: [
+          '반응형·속도·안정성 중심의 구현/배포',
+          '문의/예약/FAQ 등 운영 자동화 포인트 적용',
+          '유입·이탈·클릭 기반 개선 포인트 제공',
+  ],
       },
     ],
     portfolio: [

@@ -12,12 +12,16 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
+    "@pdf-lib/fontkit": "^1.1.1",
     "@vanilla-extract/css": "^1.17.4",
+    "framer-motion": "^12.31.0",
+    "lucide-react": "^0.542.0",
+    "pdf-lib": "^1.17.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^5.3.0",
     "react-helmet-async": "^2.0.5",
     "react-hook-form": "^7.62.0",
+    "react-icons": "^5.3.0",
     "react-router-dom": "^7.7.1",
     "zod": "^3.25.76"
   },

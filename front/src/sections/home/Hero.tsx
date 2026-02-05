@@ -6,12 +6,15 @@ import { primaryButton } from '../../components/ui.css'
 import {
   heroCopy,
   heroGrid,
-  heroTagline,
   heroTitle,
   heroBody,
   heroMuted,
   heroWrap,
   heroGlow,
+  heroShell,
+  heroScroll,
+  heroScrollMouse,
+  heroScrollWheel,
   pixel,
   pixelGrid,
   pixelGridHidden,
@@ -42,32 +45,39 @@ export const Hero = () => {
   return (
     <Section>
       <Container>
-        <div className={heroWrap}>
-          <div className={heroGlow} />
-          <div className={[pixelGrid, !showPixels ? pixelGridHidden : ''].filter(Boolean).join(' ')}>
-            {pixels.map((item) => (
-              <div
-                key={item.key}
-                className={pixel}
-                style={{
-                  animationDelay: `${item.delay}s`,
-                  opacity: 0,
-                  backgroundColor: item.color,
-                }}
-              />
-            ))}
-          </div>
-          <div className={heroGrid}>
-            <div className={heroCopy}>
-              <p className={[heroMuted, heroTagline].join(' ')}>{siteConfig.brand.tagline}</p>
-              <h1 className={heroTitle}>{siteConfig.brand.name}</h1>
-              <p className={[heroMuted, heroBody].join(' ')}>{siteConfig.brand.description}</p>
-              <div style={{ marginTop: '24px' }}>
-                <a className={primaryButton} href={siteConfig.contact.ctaHref}>
-                  {siteConfig.contact.ctaLabel}
-                </a>
+        <div className={heroShell}>
+          <div className={heroWrap}>
+            <div className={heroGlow} />
+            <div className={[pixelGrid, !showPixels ? pixelGridHidden : ''].filter(Boolean).join(' ')}>
+              {pixels.map((item) => (
+                <div
+                  key={item.key}
+                  className={pixel}
+                  style={{
+                    animationDelay: `${item.delay}s`,
+                    opacity: 0,
+                    backgroundColor: item.color,
+                  }}
+                />
+              ))}
+            </div>
+            <div className={heroGrid}>
+              <div className={heroCopy}>
+                <h1 className={heroTitle}>{siteConfig.brand.name}</h1>
+                <p className={[heroMuted, heroBody].join(' ')}>{siteConfig.brand.description}</p>
+                <div style={{ marginTop: '24px' }}>
+                  <a className={primaryButton} href={siteConfig.contact.ctaHref}>
+                    {siteConfig.contact.ctaLabel}
+                  </a>
+                </div>
               </div>
             </div>
+          </div>
+          <div className={heroScroll} aria-hidden="true">
+            <div className={heroScrollMouse}>
+              <span className={heroScrollWheel} />
+            </div>
+            <span>scroll down</span>
           </div>
         </div>
       </Container>

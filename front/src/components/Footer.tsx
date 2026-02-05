@@ -12,7 +12,7 @@ export const Footer = ({ onOpenPrivacy }: Props) => {
       <Container>
         <div className={footerInner}>
           <div>
-            <div className={footerTitle}>{siteConfig.brand.name}</div>
+            <div className={footerTitle}>CONNECT 2 EUN</div>
             <div className={footerList}>
               <span>{siteConfig.contact.address}</span>
               <span>{siteConfig.contact.businessInfo}</span>
