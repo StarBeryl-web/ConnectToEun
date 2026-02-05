@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import fontkit from '@pdf-lib/fontkit'
 import { PDFDocument, PageSizes, rgb, type PDFFont } from 'pdf-lib'
-import { motion } from 'framer-motion'
+import { easeOut, motion } from 'framer-motion'
 import { Copy, Download } from 'lucide-react'
 import { Toast } from './Toast'
 import {
@@ -40,7 +40,7 @@ const MOTION = {
     initial: { opacity: 0, y: 16, scale: 0.98 },
     animate: { opacity: 1, y: 0, scale: 1 },
     exit: { opacity: 0, y: 12, scale: 0.98 },
-    transition: { duration: 0.22, ease: 'easeOut' },
+    transition: { duration: 0.22, ease: easeOut },
   },
 }
 
