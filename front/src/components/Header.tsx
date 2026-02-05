@@ -54,24 +54,16 @@ export const Header = () => {
   }, [open])
 
   useEffect(() => {
-    const media = window.matchMedia('(min-width: 926px)')
     const updateOffset = () => {
-      const isHome = location.pathname === '/'
-      const isDesktop = media.matches
-      const shouldOffset = !isHome || !isDesktop
       const headerHeight = headerRef.current?.offsetHeight ?? 0
-      document.documentElement.style.setProperty(
-        '--header-offset',
-        shouldOffset ? `${headerHeight}px` : '0px',
-      )
-      setSolidBg(!isHome || !isDesktop)
+      document.documentElement.style.setProperty('--header-offset', `${headerHeight}px`)
+      const isHome = location.pathname === '/'
+      setSolidBg(!isHome)
     }
     updateOffset()
     window.addEventListener('resize', updateOffset)
-    media.addEventListener('change', updateOffset)
     return () => {
       window.removeEventListener('resize', updateOffset)
-      media.removeEventListener('change', updateOffset)
     }
   }, [location.pathname])
 

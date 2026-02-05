@@ -2,10 +2,10 @@ import { createGlobalTheme } from '@vanilla-extract/css'
 
 export const vars = createGlobalTheme(':root', {
   color: {
-    brand: '#d064fb',
+    brand: '#8564fb',
     brandStrong: '#0b2f4f',
     accent: '#FF850A',
-    text: '#d064fb',
+    text: '#8564fb',
     textMuted: '#b4b9b2',
     background: '#242427',
     surface: '#ffffff',

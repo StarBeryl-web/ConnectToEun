@@ -156,7 +156,7 @@ export const pixelGrid = style({
 export const pixel = style({
   borderRadius: '6px',
   background:
-    'linear-gradient(135deg, rgba(133,10,255,0.65), rgba(255,133,10,0.6), rgba(10,255,133,0.6))',
+    'linear-gradient(135deg, #8564fb, #FB8564, #64FB85)',
   animationName: wave,
   animationDuration: '2.6s',
   animationTimingFunction: 'ease-in-out',
@@ -287,7 +287,7 @@ export const infoWord = style({
   display: 'inline-block',
   paddingBlock: '0.24em',
   color: 'rgba(255,255,255,0.16)',
-  backgroundImage: 'linear-gradient(180deg, #d064fb, #ac02ef)',
+  backgroundImage: 'linear-gradient(180deg, #8564fb, #4d1cff)',
   backgroundRepeat: 'no-repeat',
   backgroundSize: '100% var(--fill, 0%)',
   WebkitBackgroundClip: 'text',
@@ -504,7 +504,7 @@ export const servicesNumber = style({
   fontWeight: 700,
   color: '#000000',
   background:
-    'linear-gradient(135deg, #d064fb, #64FBD0)',
+    'linear-gradient(135deg, #8564fb, #64FB85)',
 })
 
 export const servicesNumberStack = style({

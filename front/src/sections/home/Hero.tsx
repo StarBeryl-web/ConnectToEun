@@ -28,7 +28,7 @@ export const Hero = () => {
     const col = index % columns
     const row = Math.floor(index / columns)
     const delay = col * 0.08 + row * 0.03
-    const palette = ['rgba(133,10,255,0.7)', 'rgba(255,133,10,0.65)', 'rgba(10,255,133,0.6)']
+    const palette = ['rgba(133,10,255,0.7)', '#FB8564', '#64FB85']
     const color = palette[(col + row) % palette.length]
     return { key: `${row}-${col}`, delay, color }
   })

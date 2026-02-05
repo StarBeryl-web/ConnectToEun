@@ -17,7 +17,7 @@ export const headerInner = style({
   alignItems: 'center',
   justifyContent: 'space-between',
   gap: '16px',
-  padding: '16px 0',
+  padding: '20px 0',
 })
 
 export const logo = style({
@@ -97,7 +97,7 @@ export const mobileOverlay = style({
   inset: 0,
   zIndex: 30,
   background:
-    'linear-gradient(135deg, #d064fb, #3a0051) 35%',
+    'linear-gradient(135deg, #8564fb, #2e1199) 35%',
   clipPath: 'circle(0% at 100% 0%)',
   transition: 'clip-path 700ms ease',
   pointerEvents: 'none',
