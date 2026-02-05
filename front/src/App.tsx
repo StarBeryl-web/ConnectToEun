@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { HashRouter, Route, Routes } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { HashRouter, Route, Routes, useLocation } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import { Header } from './components/Header'
 import { Footer } from './components/Footer'
@@ -21,6 +21,7 @@ function App() {
   return (
     <HelmetProvider>
       <HashRouter>
+        <ScrollToTop />
         <Integrations />
         <Header />
         <Routes>
@@ -42,3 +43,13 @@ function App() {
 }
 
 export default App
+
+const ScrollToTop = () => {
+  const location = useLocation()
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+  }, [location.pathname, location.search, location.hash])
+
+  return null
+}
