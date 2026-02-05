@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion, type Transition } from 'framer-motion'
 import { AlertCircle, Check } from 'lucide-react'
 import { toastCard, toastIcon, toastMessage, toastRegion } from '../sections/contact/contact.css'
 
@@ -8,7 +8,7 @@ type ToastMotion = {
   initial: { opacity: number; y: number; scale: number }
   animate: { opacity: number; y: number; scale: number }
   exit: { opacity: number; y: number; scale: number }
-  transition: { duration: number; ease: string }
+  transition: Transition
 }
 
 type ToastProps = {
