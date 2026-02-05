@@ -48,6 +48,7 @@ export type BlogPost = {
   date: string
   href: string
   tags?: string[]
+  content?: string
 }
 
 export type SiteConfig = {

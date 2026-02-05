@@ -11,8 +11,7 @@ globalStyle('body', {
   fontFamily: vars.typography.body,
   color: vars.color.text,
   backgroundColor: vars.color.background,
-  backgroundImage:
-    'radial-gradient(circle at top left, rgba(224, 162, 27, 0.15), transparent 45%), radial-gradient(circle at 80% 10%, rgba(15, 76, 129, 0.12), transparent 50%)',
+  backgroundImage: 'none',
   lineHeight: 1.6,
 })
 

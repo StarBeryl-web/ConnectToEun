@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import { VscChromeClose, VscMenu } from 'react-icons/vsc'
 import { siteConfig } from '../config/loadSiteConfig'
 import { withBase } from '../utils/asset'
@@ -9,6 +10,7 @@ import {
   ctaDesktop,
   desktopNav,
   headerInner,
+  headerSolid,
   headerWrap,
   logo,
   mobileNav,
@@ -23,6 +25,9 @@ import {
 export const Header = () => {
   const [open, setOpen] = useState(false)
   const [atTop, setAtTop] = useState(true)
+  const location = useLocation()
+  const headerRef = useRef<HTMLElement | null>(null)
+  const [solidBg, setSolidBg] = useState(false)
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
@@ -48,8 +53,30 @@ export const Header = () => {
     }
   }, [open])
 
+  useEffect(() => {
+    const media = window.matchMedia('(min-width: 926px)')
+    const updateOffset = () => {
+      const isHome = location.pathname === '/'
+      const isDesktop = media.matches
+      const shouldOffset = !isHome || !isDesktop
+      const headerHeight = headerRef.current?.offsetHeight ?? 0
+      document.documentElement.style.setProperty(
+        '--header-offset',
+        shouldOffset ? `${headerHeight}px` : '0px',
+      )
+      setSolidBg(!isHome || !isDesktop)
+    }
+    updateOffset()
+    window.addEventListener('resize', updateOffset)
+    media.addEventListener('change', updateOffset)
+    return () => {
+      window.removeEventListener('resize', updateOffset)
+      media.removeEventListener('change', updateOffset)
+    }
+  }, [location.pathname])
+
   return (
-    <header className={headerWrap}>
+    <header ref={headerRef} className={[headerWrap, solidBg ? headerSolid : ''].filter(Boolean).join(' ')}>
       <Container>
         <div className={headerInner}>
           <a href="#/" className={logo}>

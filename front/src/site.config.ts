@@ -163,32 +163,7 @@ export const siteOverrides: SiteConfigOverride = {
       { year: '2024', event: '주요 이정표 3' },
     ],
 
-    blogPosts: [
-      {
-        id: 'design-system',
-        title: '브랜드 시스템을 빠르게 정리하는 법',
-        summary: '컬러/타이포/컴포넌트 규칙을 정리하는 체크리스트를 공유합니다.',
-        date: '2026-01-10',
-        href: '#/blog/design-system',
-        tags: ['Design', 'System'],
-      },
-      {
-        id: 'launch-playbook',
-        title: '런칭 준비: 2주 안에 끝내는 체크리스트',
-        summary: '제품/서비스 런칭 시 꼭 확인해야 할 항목을 정리했습니다.',
-        date: '2026-01-18',
-        href: '#/blog/launch-playbook',
-        tags: ['Launch'],
-      },
-      {
-        id: 'case-study',
-        title: '리브랜딩 프로젝트 회고',
-        summary: '브랜드 리뉴얼 과정에서 얻은 인사이트를 공유합니다.',
-        date: '2026-01-22',
-        href: '#/blog/case-study',
-        tags: ['Case Study'],
-      },
-    ],
+    blogPosts: [],
     // trustBadges: [],
     // services: [],
     // portfolio: [],

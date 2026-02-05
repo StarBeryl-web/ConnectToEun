@@ -8,6 +8,10 @@ export const headerWrap = style({
   backgroundColor: 'transparent',
 })
 
+export const headerSolid = style({
+  backgroundColor: '#242427',
+})
+
 export const headerInner = style({
   display: 'flex',
   alignItems: 'center',

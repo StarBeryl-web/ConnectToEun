@@ -9,7 +9,8 @@ export const container = style({
 })
 
 export const section = style({
-  padding: `${vars.layout.sectionSpacing} 0`,
+  paddingTop: `calc(${vars.layout.sectionSpacing} + var(--header-offset, 0px))`,
+  paddingBottom: vars.layout.sectionSpacing,
 })
 
 export const sectionTitle = style({
