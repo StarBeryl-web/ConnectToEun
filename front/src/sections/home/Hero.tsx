@@ -65,7 +65,7 @@ export const Hero = () => {
               <div className={heroCopy}>
                 <h1 className={heroTitle}>{siteConfig.brand.name}</h1>
                 <p className={[heroMuted, heroBody].join(' ')}>{siteConfig.brand.description}</p>
-                <div style={{ marginTop: '24px' }}>
+                <div style={{ marginTop: '24px', display: 'flex', justifyContent: 'center' }}>
                   <a className={primaryButton} href={siteConfig.contact.ctaHref}>
                     {siteConfig.contact.ctaLabel}
                   </a>

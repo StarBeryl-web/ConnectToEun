@@ -9,7 +9,7 @@ export const container = style({
 })
 
 export const section = style({
-  paddingTop: `calc(${vars.layout.sectionSpacing} + var(--header-offset, 0px))`,
+  paddingTop: `calc(${vars.layout.sectionSpacing})`,
   paddingBottom: vars.layout.sectionSpacing,
 })
 

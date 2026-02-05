@@ -22,6 +22,7 @@ export const heroWrap = style({
 
 export const heroShell = style({
   position: 'relative',
+  paddingTop: '18px',
   paddingBottom: '64px',
 })
 
@@ -29,6 +30,8 @@ export const heroGrid = style({
   display: 'grid',
   gap: '28px',
   alignItems: 'center',
+  alignContent: 'center',
+  paddingTop: '50px',
   gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
   position: 'relative',
   zIndex: 2,
@@ -44,13 +47,13 @@ export const heroCopy = style({
 })
 
 export const heroTitle = style({
-  fontSize: 'clamp(18px, 5vw, 60px)',
+  fontSize: 'clamp(30px, 6vw, 70px)',
   lineHeight: 1.05,
   letterSpacing: '-0.02em',
 })
 
 export const heroBody = style({
-  fontSize: 'clamp(10px, 1.3vw, 50px)',
+  fontSize: 'clamp(18px, 2vw, 70px)',
   lineHeight: 1.6,
   whiteSpace: 'pre-line',
 })
