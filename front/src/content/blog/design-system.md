@@ -3,7 +3,7 @@ id: design-system
 title: 브랜드 시스템을 빠르게 정리하는 법
 summary: 컬러/타이포/컴포넌트 규칙을 정리하는 체크리스트를 공유합니다.
 date: 2026-01-10
-tags: [Design, System]
+tags: [Design]
 ---
 
 # 브랜드 시스템을 빠르게 정리하는 법

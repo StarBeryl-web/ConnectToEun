@@ -47,7 +47,7 @@ export const heroCopy = style({
 })
 
 export const heroTitle = style({
-  fontSize: 'clamp(30px, 6vw, 70px)',
+  fontSize: 'clamp(24px, 5vw, 70px)',
   lineHeight: 1.05,
   letterSpacing: '-0.02em',
 })
@@ -269,6 +269,7 @@ export const infoCenter = style({
   placeItems: 'center',
   textAlign: 'center',
   gap: '3px',
+  paddingTop: '40px',
 })
 
 export const infoPin = style({
@@ -317,7 +318,7 @@ export const infoDesc = style({
 
 export const infoDescSmall = style({
   fontSize: 'clamp(20px, 1.6vw, 20px)',
-  marginTop: '-85px',
+  marginTop: '-70px',
   fontWeight: 500,
   color: 'rgba(255,255,255,0.2)',
   opacity: 'var(--desc, 0.35)',

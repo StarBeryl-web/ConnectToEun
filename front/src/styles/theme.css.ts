@@ -3,12 +3,12 @@ import { createGlobalTheme } from '@vanilla-extract/css'
 export const vars = createGlobalTheme(':root', {
   color: {
     brand: '#8564fb',
-    brandStrong: '#0b2f4f',
-    accent: '#FF850A',
+    brandStrong: '#E6E6F1',
+    accent: '#ae99fb',
     text: '#8564fb',
     textMuted: '#b4b9b2',
     background: '#242427',
-    surface: '#ffffff',
+    surface: '#404045',
     border: '#e6e0d9',
   },
   typography: {

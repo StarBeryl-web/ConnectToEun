@@ -7,8 +7,8 @@ export const siteOverrides: SiteConfigOverride = {
     name: 'CONNECT 2 EUN : AI PlayBook',
     tagline: '',
     description: 'AI를 실무에 맞게 적용하고\nWEB을 디지털 자산으로 만듭니다',
-    logoText: 'CONNECT 2 EUN',
-    logoImage: '',
+    logoText:'',
+    logoImage: '/branding/logo.svg',
     heroImage: '',
     ogImage: ''
   },

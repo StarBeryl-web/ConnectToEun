@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css'
+import { globalStyle, style } from '@vanilla-extract/css'
 import { vars } from '../styles/theme.css'
 
 export const headerWrap = style({
@@ -25,7 +25,7 @@ export const logo = style({
   alignItems: 'center',
   gap: '12px',
   fontFamily: vars.typography.heading,
-  fontSize: 'clamp(14px, 6vw, 30px)',
+  fontSize: 'clamp(14px, 6vw, 60px)',
   fontWeight: 700,
 })
 
@@ -38,9 +38,18 @@ export const nav = style({
   transition: 'opacity 200ms ease, transform 200ms ease',
 })
 
+globalStyle(`${nav} a`, {
+  color: '#E6E6F1',
+  transition: 'color 150ms ease',
+})
+
+globalStyle(`${nav} a:hover`, {
+  color: '#8564fb',
+})
+
 export const navHidden = style({
   opacity: 1,
-  transform: 'translateY(-60px)',
+  transform: 'translateY(-70px)',
 })
 
 export const mobileToggle = style({
@@ -113,14 +122,14 @@ export const mobileOverlayClose = style({
   top: '16px',
   right: '16px',
   color: '#ffffff',
-  fontSize: '26px',
+  fontSize: '48px',
   lineHeight: 1,
   zIndex: 31,
   display: 'inline-flex',
   alignItems: 'center',
   justifyContent: 'center',
-  width: '44px',
-  height: '44px',
+  width: '48px',
+  height: '48px',
   borderRadius: '999px',
   backgroundColor: 'rgba(255,255,255,0.08)',
   border: '1px solid rgba(255,255,255,0.2)',

@@ -4,6 +4,7 @@ import { PDFDocument, PageSizes, rgb, type PDFFont } from 'pdf-lib'
 import { easeOut, motion } from 'framer-motion'
 import { Copy, Download } from 'lucide-react'
 import { Toast } from './Toast'
+import { CustomSelect } from './CustomSelect'
 import {
   buttonRow,
   checkboxGrid,
@@ -24,7 +25,6 @@ import {
   secondaryButton,
   section,
   sectionTitle,
-  select,
   textarea,
 } from '../sections/contact/contact.css'
 
@@ -325,9 +325,11 @@ export const EstimateQuote = () => {
         <div className={formHeader}>
           <h2 className={formTitle}>요구서 작성</h2>
           <p className={formSubtitle}>
-            브라우저에 필요한 정보를 입력하면 즉시 PDF 요구서를 생성할 수 있어요.
+            * 브라우저에 필요한 정보를 입력하면 즉시 PDF 요구서를 생성할 수 있어요.
               <br />
-            요구서를 바탕으로 미팅 진행하니 최대한 자세히 작성해주세요.
+            * 페이지를 나가면 작성한 내용이 사라지니 주의해 주세요.
+              <br />
+            * 요구서를 바탕으로 미팅 진행하니 최대한 자세히 작성해 주세요.
           </p>
         </div>
 
@@ -355,21 +357,19 @@ export const EstimateQuote = () => {
           <div className={fieldGrid}>
             <label className={label}>
               프로젝트 유형
-              <select
-                className={select}
+              <CustomSelect
+                ariaLabel="프로젝트 유형"
                 value={form.projectType}
-                onChange={(event) => updateField('projectType', event.target.value)}
-              >
-                <option value="" disabled>
-                  선택해 주세요
-                </option>
-                <option value="기업사이트">기업 사이트</option>
-                <option value="쇼핑몰">쇼핑몰</option>
-                <option value="브랜딩+웹">브랜딩+웹</option>
-                <option value="스튜디오 사진 촬영">스튜디오 사진 촬영</option>
-                <option value="메뉴판">메뉴판/명함 디자인</option>
-                <option value="상세페이지">상세페이지/배너 디자인</option>
-              </select>
+                onChange={(value) => updateField('projectType', value)}
+                options={[
+                  { label: '기업 사이트', value: '기업사이트' },
+                  { label: '쇼핑몰', value: '쇼핑몰' },
+                  { label: '브랜딩+웹', value: '브랜딩+웹' },
+                  { label: '스튜디오 사진 촬영', value: '스튜디오 사진 촬영' },
+                  { label: '메뉴판/명함 디자인', value: '메뉴판' },
+                  { label: '상세페이지/배너 디자인', value: '상세페이지' },
+                ]}
+              />
             </label>
             <label className={label}>
               페이지 수
@@ -402,23 +402,21 @@ export const EstimateQuote = () => {
         <section className={section}>
           <h3 className={sectionTitle}>예산/일정</h3>
             <p className={formSubtitle}>
-              페이지 수와 기능에 따라 추가 요금이 발생할 수 있습니다.
+              * 페이지 수와 기능에 따라 추가 요금이 발생할 수 있습니다.
           </p>
           <div className={fieldGrid}>
             <label className={label}>
               예산 범위
-              <select
-                className={select}
+              <CustomSelect
+                ariaLabel="예산 범위"
                 value={form.budgetRange}
-                onChange={(event) => updateField('budgetRange', event.target.value)}
-              >
-                <option value="" disabled>
-                  선택해 주세요
-                </option>
-                <option value="200~400">200~400 만원</option>
-                <option value="400~700">400~700 만원</option>
-                <option value="700+">700+ 만원</option>
-              </select>
+                onChange={(value) => updateField('budgetRange', value)}
+                options={[
+                  { label: '200~400 만원', value: '200~400' },
+                  { label: '400~700 만원', value: '400~700' },
+                  { label: '700+ 만원', value: '700+' },
+                ]}
+              />
             </label>
             <label className={label}>
               희망 일정
@@ -460,77 +458,68 @@ export const EstimateQuote = () => {
           <div className={fieldGrid}>
             <label className={label}>
               원하는 분위기
-              <select
-                className={select}
+              <CustomSelect
+                ariaLabel="원하는 분위기"
                 value={form.mood}
-                onChange={(event) => updateField('mood', event.target.value)}
-              >
-                <option value="" disabled>
-                  선택해 주세요
-                </option>
-                {['미니멀', '럭셔리', '내추럴', '테크', '키치', '감성', '클래식', '미래지향'].map(
-                  (option) => (
-                    <option key={option} value={option}>
-                      {option}
-                    </option>
-                  ),
-                )}
-              </select>
+                onChange={(value) => updateField('mood', value)}
+                options={[
+                  { label: '미니멀', value: '미니멀' },
+                  { label: '럭셔리', value: '럭셔리' },
+                  { label: '내추럴', value: '내추럴' },
+                  { label: '테크', value: '테크' },
+                  { label: '키치', value: '키치' },
+                  { label: '감성', value: '감성' },
+                  { label: '클래식', value: '클래식' },
+                  { label: '미래지향', value: '미래지향' },
+                ]}
+              />
             </label>
             <label className={label}>
               톤 앤 매너
-              <select
-                className={select}
+              <CustomSelect
+                ariaLabel="톤 앤 매너"
                 value={form.toneManner}
-                onChange={(event) => updateField('toneManner', event.target.value)}
-              >
-                <option value="" disabled>
-                  선택해 주세요
-                </option>
-                {['차분', '친근', '공격적', '프리미엄', '젊은', '전문적'].map((option) => (
-                  <option key={option} value={option}>
-                    {option}
-                  </option>
-                ))}
-              </select>
+                onChange={(value) => updateField('toneManner', value)}
+                options={[
+                  { label: '차분', value: '차분' },
+                  { label: '친근', value: '친근' },
+                  { label: '공격적', value: '공격적' },
+                  { label: '프리미엄', value: '프리미엄' },
+                  { label: '젊은', value: '젊은' },
+                  { label: '전문적', value: '전문적' },
+                ]}
+              />
             </label>
           </div>
           <div className={fieldGrid}>
             <label className={label}>
               컬러 선호
-              <select
-                className={select}
+              <CustomSelect
+                ariaLabel="컬러 선호"
                 value={form.colorPreference}
-                onChange={(event) => updateField('colorPreference', event.target.value)}
-              >
-                <option value="" disabled>
-                  선택해 주세요
-                </option>
-                {['모노톤', '파스텔', '비비드', '브랜드컬러 유지', '추천받기'].map(
-                  (option) => (
-                    <option key={option} value={option}>
-                      {option}
-                    </option>
-                  ),
-                )}
-              </select>
+                onChange={(value) => updateField('colorPreference', value)}
+                options={[
+                  { label: '모노톤', value: '모노톤' },
+                  { label: '파스텔', value: '파스텔' },
+                  { label: '비비드', value: '비비드' },
+                  { label: '브랜드컬러 유지', value: '브랜드컬러 유지' },
+                  { label: '추천받기', value: '추천받기' },
+                ]}
+              />
             </label>
             <label className={label}>
               카피 스타일
-              <select
-                className={select}
+              <CustomSelect
+                ariaLabel="카피 스타일"
                 value={form.copyStyle}
-                onChange={(event) => updateField('copyStyle', event.target.value)}
-              >
-                <option value="" disabled>
-                  선택해 주세요
-                </option>
-                {['짧고 임팩트', '설명형', '스토리텔링', '데이터·근거형'].map((option) => (
-                  <option key={option} value={option}>
-                    {option}
-                  </option>
-                ))}
-              </select>
+                onChange={(value) => updateField('copyStyle', value)}
+                options={[
+                  { label: '짧고 임팩트', value: '짧고 임팩트' },
+                  { label: '설명형', value: '설명형' },
+                  { label: '스토리텔링', value: '스토리텔링' },
+                  { label: '데이터·근거형', value: '데이터·근거형' },
+                ]}
+              />
             </label>
           </div>
           <div className={fieldStack}>
@@ -614,7 +603,24 @@ export const EstimateQuote = () => {
             </p>
           </div>
         </section>
-
+        <div className={buttonRow}>
+          <motion.button
+            type="button"
+            className={primaryButton}
+            onClick={handleDownloadPdf}
+            aria-label="요구서 PDF 다운로드"
+            disabled={isGenerating}
+            {...MOTION.button}
+          >
+            <Download size={16} />
+            {isGenerating ? 'PDF 생성 중...' : '요구서 PDF 다운로드'}
+          </motion.button>
+        </div>
+          <p className={formSubtitle}>
+            * PDF를 다운로드해 메일에 첨부해 주세요.
+              <br />
+            * 남겨주신 전화번호로 미팅 일정을 안내드릴게요.
+          </p>
         <section className={section}>
           <h3 className={sectionTitle}>메일 주소 복사</h3>
           <div className={emailRow}>
@@ -639,20 +645,6 @@ export const EstimateQuote = () => {
             </motion.button>
           </div>
         </section>
-
-        <div className={buttonRow}>
-          <motion.button
-            type="button"
-            className={primaryButton}
-            onClick={handleDownloadPdf}
-            aria-label="요구서 PDF 다운로드"
-            disabled={isGenerating}
-            {...MOTION.button}
-          >
-            <Download size={16} />
-            {isGenerating ? 'PDF 생성 중...' : '요구서 PDF 다운로드'}
-          </motion.button>
-        </div>
       </form>
 
       <Toast

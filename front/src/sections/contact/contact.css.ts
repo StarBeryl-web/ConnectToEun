@@ -88,11 +88,25 @@ export const input = style({
 export const select = style({
   ...baseInput,
   appearance: 'none',
+  backgroundColor: vars.color.surface,
+  color: vars.color.brandStrong,
+  border: `1px solid rgba(230, 230, 241, 0.25)`,
   backgroundImage:
-    'linear-gradient(45deg, transparent 50%, rgba(0,0,0,0.4) 50%), linear-gradient(135deg, rgba(0,0,0,0.4) 50%, transparent 50%)',
-  backgroundPosition: 'calc(100% - 16px) 55%, calc(100% - 11px) 55%',
-  backgroundSize: '5px 5px, 5px 5px',
+    'linear-gradient(45deg, transparent 50%, rgba(230,230,241,0.7) 50%), linear-gradient(135deg, rgba(230,230,241,0.7) 50%, transparent 50%)',
+  backgroundPosition: 'calc(100% - 18px) 55%, calc(100% - 12px) 55%',
+  backgroundSize: '6px 6px, 6px 6px',
   backgroundRepeat: 'no-repeat',
+  paddingRight: '38px',
+  transition: 'border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease',
+  colorScheme: 'dark',
+  ':hover': {
+    borderColor: 'rgba(230, 230, 241, 0.45)',
+  },
+  ':focus': {
+    borderColor: vars.color.accent,
+    boxShadow: `0 0 0 3px rgba(251, 133, 100, 0.25)`,
+    outline: 'none',
+  },
 })
 
 export const textarea = style({

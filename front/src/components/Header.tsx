@@ -73,7 +73,7 @@ export const Header = () => {
         <div className={headerInner}>
           <a href="#/" className={logo}>
             {siteConfig.brand.logoImage ? (
-              <img src={withBase(siteConfig.brand.logoImage)} alt={siteConfig.brand.name} height={32} />
+              <img src={withBase(siteConfig.brand.logoImage)} alt={siteConfig.brand.name} height={64} />
             ) : null}
             <span>{siteConfig.brand.logoText}</span>
           </a>

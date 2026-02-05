@@ -63,7 +63,7 @@ export const Footer = ({ onOpenPrivacy }: Props) => {
             </div>
           </div>
         </div>
-        <div className={footerMeta}>© {new Date().getFullYear()} {siteConfig.brand.name}</div>
+        <div className={footerMeta}>© {new Date().getFullYear()} CONNECT 2 EUN</div>
       </Container>
     </footer>
   )

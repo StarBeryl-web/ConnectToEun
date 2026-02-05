@@ -34,7 +34,7 @@ export const outlineButton = style({
 export const card = style({
   backgroundColor: vars.color.surface,
   borderRadius: vars.radii.lg,
-  border: `1px solid ${vars.color.border}`,
+  // border: `1px solid ${vars.color.border}`,
   boxShadow: vars.shadow.sm,
   padding: '20px',
 })
