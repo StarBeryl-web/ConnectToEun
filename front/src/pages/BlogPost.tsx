@@ -72,7 +72,7 @@ export const BlogPostPage = () => {
           ) : (
             <p>이 게시글의 본문이 아직 등록되지 않았습니다.</p>
           )}
-          <a className={primaryButton} href="#/blog">
+          <a className={primaryButton} href="#/blog" style={{ marginTop: '32px' }}>
             목록으로
           </a>
         </Container>

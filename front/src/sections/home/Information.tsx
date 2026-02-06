@@ -71,7 +71,7 @@ export const Information = () => {
                   className={infoDescLine}
                   style={{ '--line-fill': `${Math.round(line1 * 100)}%` } as React.CSSProperties}
                 >
-                  기획 · 디자인 · 개발 시작부터 끝까지.
+                  기획 · 디자인 · 개발 시작부터 끝까지
                 </span>
               </p>
               <p className={infoDescSmall}>
@@ -79,19 +79,19 @@ export const Information = () => {
                   className={infoDescLine}
                   style={{ '--line-fill': `${Math.round(line2 * 100)}%` } as React.CSSProperties}
                 >
-                  단계는 줄이고 속도는 높였습니다.
+                  단계는 줄이고 속도는 높였습니다
                 </span>
                 <span
                   className={infoDescLine}
                   style={{ '--line-fill': `${Math.round(line3 * 100)}%` } as React.CSSProperties}
                 >
-                  한 번의 미팅으로 방향을 정리하여
+                  풀스택 개발자가 방향을 정리해
                 </span>
                 <span
                   className={infoDescLine}
                   style={{ '--line-fill': `${Math.round(line4 * 100)}%` } as React.CSSProperties}
                 >
-                  복잡한 과정과 비용을 줄여드립니다
+                  불필요한 과정과 비용을 줄여드립니다
                 </span>
               </p>
             </div>

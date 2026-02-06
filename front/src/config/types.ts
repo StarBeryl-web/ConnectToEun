@@ -131,7 +131,7 @@ export type SiteConfig = {
     testimonials: Testimonial[]
     faqs: FAQItem[]
     processSteps: string[]
-    values: string[]
+    values: { title: string; description?: string; image?: string }[]
     team: { name: string; role: string }[]
     timeline: { year: string; event: string }[]
     blogPosts: BlogPost[]

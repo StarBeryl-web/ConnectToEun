@@ -77,3 +77,8 @@ globalStyle('a:focus-visible, button:focus-visible, input:focus-visible, textare
   outline: `2px solid ${vars.color.accent}`,
   outlineOffset: '2px',
 })
+
+globalStyle('::selection', {
+  backgroundColor: vars.color.brand,
+  color: '#ffffff',
+})

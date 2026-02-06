@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import { SEO } from '../components/SEO'
 import { Container } from '../components/Container'
 import { Section } from '../components/Section'
@@ -10,6 +10,8 @@ import {
   blogCard,
   blogMeta,
   blogSearch,
+  blogSearchButton,
+  blogSearchRow,
   blogSelect,
   blogSummary,
   blogTag,
@@ -25,6 +27,7 @@ export const BlogPage = () => {
   const [selectedTag, setSelectedTag] = useState('all')
   const [sort, setSort] = useState('latest')
   const posts = siteConfig.data.blogPosts
+  const searchRef = useRef<HTMLInputElement | null>(null)
 
   const tags = ['Design', 'Cost', 'Launch', 'Development', 'Product']
 
@@ -56,25 +59,24 @@ export const BlogPage = () => {
           <p className={sectionEyebrow}>Tech Blog</p>
           <h2 className={sectionTitle}>기술 블로그</h2>
           <div className={blogToolbar}>
-            <input
-              className={blogSearch}
-              type="search"
-              placeholder="제목으로 검색"
-              value={query}
-              onChange={(event) => setQuery(event.target.value)}
-              aria-label="블로그 제목 검색"
-            />
-            <div className={blogSelect}>
-              <CustomSelect
-                ariaLabel="정렬 기준"
-                value={sort}
-                onChange={setSort}
-                options={[
-                  { label: '최신순', value: 'latest' },
-                  { label: '오래된순', value: 'oldest' },
-                  { label: '제목순', value: 'title' },
-                ]}
+            <div className={blogSearchRow}>
+              <input
+                ref={searchRef}
+                className={blogSearch}
+                type="search"
+                placeholder="제목으로 검색"
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+                aria-label="블로그 제목 검색"
               />
+              <button
+                type="button"
+                className={blogSearchButton}
+                onClick={() => searchRef.current?.blur()}
+                aria-label="검색"
+              >
+                검색
+              </button>
             </div>
             <div className={blogTagsRow}>
               <button
@@ -82,7 +84,7 @@ export const BlogPage = () => {
                 className={`${blogTagFilter} ${selectedTag === 'all' ? blogTagFilterActive : ''}`}
                 onClick={() => setSelectedTag('all')}
               >
-                전체
+                ALL
               </button>
               {tags.map((tag) => (
                 <button
@@ -94,6 +96,18 @@ export const BlogPage = () => {
                   {tag}
                 </button>
               ))}
+            </div>
+            <div className={blogSelect}>
+              <CustomSelect
+                ariaLabel="정렬 기준"
+                value={sort}
+                onChange={setSort}
+                options={[
+                  { label: '최신순', value: 'latest' },
+                  { label: '오래된순', value: 'oldest' },
+                  { label: '제목순', value: 'title' },
+                ]}
+              />
             </div>
           </div>
           <div className={gridTwo}>

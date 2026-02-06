@@ -7,8 +7,15 @@ import { Toast } from './Toast'
 import { CustomSelect } from './CustomSelect'
 import {
   buttonRow,
-  checkboxGrid,
-  checkboxItem,
+  // checkboxGrid,
+  // checkboxItem,
+  consentCard,
+  consentCheckRow,
+  consentDetails,
+  consentDetailsContent,
+  consentDetailsToggle,
+  consentRequired,
+  consentSummary,
   emailRow,
   fieldGrid,
   fieldStack,
@@ -25,6 +32,12 @@ import {
   secondaryButton,
   section,
   sectionTitle,
+  modalActions,
+  modalBody,
+  modalButton,
+  modalCard,
+  modalOverlay,
+  modalTitle,
   textarea,
 } from '../sections/contact/contact.css'
 
@@ -50,6 +63,7 @@ type FormState = {
   clientName: string
   email: string
   projectType: string
+  projectDomain: string
   pageCount: string
   features: string[]
   budgetRange: string
@@ -65,6 +79,7 @@ type FormState = {
   feedbackStyle: string
   decisionMaker: string
   brandGuide: string
+  privacyConsent: boolean
 }
 
 type ToastState = {
@@ -77,6 +92,7 @@ const initialState: FormState = {
   clientName: '',
   email: '',
   projectType: '',
+  projectDomain: '',
   pageCount: '',
   features: [],
   budgetRange: '',
@@ -92,6 +108,7 @@ const initialState: FormState = {
   feedbackStyle: '',
   decisionMaker: '',
   brandGuide: '',
+  privacyConsent: false,
 }
 
 const formatDate = (date: Date, separator = '-') => {
@@ -130,6 +147,7 @@ export const EstimateQuote = () => {
   const [form, setForm] = useState<FormState>(initialState)
   const [toast, setToast] = useState<ToastState | null>(null)
   const [isGenerating, setIsGenerating] = useState(false)
+  const [showConsentModal, setShowConsentModal] = useState(false)
   const emailInputRef = useRef<HTMLInputElement | null>(null)
 
   const referenceLinks = useMemo(
@@ -195,6 +213,10 @@ export const EstimateQuote = () => {
   }
 
   const handleDownloadPdf = async () => {
+    if (!form.privacyConsent) {
+      setShowConsentModal(true)
+      return
+    }
     setIsGenerating(true)
     try {
       const pdfDoc = await PDFDocument.create()
@@ -259,8 +281,9 @@ export const EstimateQuote = () => {
 
       drawLine('프로젝트 요약', bodySize, true)
       drawLine(`프로젝트 유형: ${form.projectType || '-'}`)
+      drawLine(`업종: ${form.projectDomain || '-'}`)
       drawLine(`페이지 수: ${form.pageCount || '-'}`)
-      drawLine(`기능: ${form.features.length ? form.features.join(', ') : '-'}`)
+      // drawLine(`기능: ${form.features.length ? form.features.join(', ') : '-'}`)
       drawLine(`예산 범위: ${form.budgetRange || '-'}`)
       drawLine(`희망 일정: ${form.desiredDate || '-'}`)
       drawParagraph(`추가 요청사항: ${form.additionalRequest || '-'}`)
@@ -285,6 +308,7 @@ export const EstimateQuote = () => {
       drawLine(`피드백 스타일: ${form.feedbackStyle || '-'}`)
       drawLine(`결정권자 여부: ${form.decisionMaker || '-'}`)
       drawLine(`브랜드 가이드 유무: ${form.brandGuide || '-'}`)
+      drawLine(`개인정보 이용 동의: ${form.privacyConsent ? '동의함' : '미동의'}`)
       cursorY -= 6
 
       drawParagraph('최종 금액/범위는 미팅 후 확정됩니다.')
@@ -372,6 +396,27 @@ export const EstimateQuote = () => {
               />
             </label>
             <label className={label}>
+              업종
+              <CustomSelect
+                ariaLabel="업종"
+                value={form.projectDomain}
+                onChange={(value) => updateField('projectDomain', value)}
+                options={[
+                  { label: '기업', value: '기업' },
+                  { label: '제조업', value: '제조업' },
+                  { label: '전문직(법률·회계)', value: '전문직(법률·회계)' },
+                  { label: '인강/교육', value: '인강/교육' },
+                  { label: 'IT 스타트업', value: 'IT 스타트업' },
+                  { label: '병원/클리닉', value: '병원/클리닉' },
+                  { label: '쇼핑/이커머스', value: '쇼핑/이커머스' },
+                  { label: '공공기관', value: '공공기관' },
+                  { label: '자영업/소상공인', value: '자영업/소상공인' },
+                  { label: '에이전시', value: '에이전시' },
+                  { label: '기타', value: '기타' },
+                ]}
+              />
+            </label>
+            <label className={label}>
               페이지 수
               <input
                 className={input}
@@ -382,6 +427,7 @@ export const EstimateQuote = () => {
               />
             </label>
           </div>
+          {/*
           <div className={fieldStack}>
             <span className={label}>기능 체크박스</span>
             <div className={checkboxGrid}>
@@ -397,6 +443,7 @@ export const EstimateQuote = () => {
               ))}
             </div>
           </div>
+          */}
         </section>
 
         <section className={section}>
@@ -569,7 +616,7 @@ export const EstimateQuote = () => {
             <div className={fieldStack}>
               <span className={label}>결정권자 여부</span>
               <div className={radioGroup}>
-                {['본인', '팀', '대표', '외주 대행'].map((option) => (
+                {['본인', '팀', '대표'].map((option) => (
                   <label key={option} className={radioItem}>
                     <input
                       type="radio"
@@ -603,6 +650,51 @@ export const EstimateQuote = () => {
             </p>
           </div>
         </section>
+        <section className={section}>
+          <h3 className={sectionTitle}>개인정보 이용 동의</h3>
+          <div className={consentCard}>
+            <p className={consentSummary}>
+              문의 접수 및 상담 진행을 위해 최소한의 개인정보를 수집합니다. 수집 목적,
+              보관 기간, 파기 절차에 대한 자세한 내용을 확인해 주세요.
+            </p>
+            <details className={consentDetails}>
+              <summary className={consentDetailsToggle}>요약 더보기</summary>
+              <div className={consentDetailsContent}>
+                [제1조] 개인정보 수집 및 이용 동의{'\n'}
+                고객은 문의 접수 시 개인정보 수집 및 이용에 동의해야 합니다.{'\n'}
+                {'\n'}
+                [제2조] 수집 항목 및 이용 목적{'\n'}
+                - 수집 항목: 이름, 연락처, 이메일{'\n'}
+                - 이용 목적: 상담 진행 및 서비스 안내{'\n'}
+                - 보유 기간: 5년 보관 후 파기{'\n'}
+                {'\n'}
+                [제3조] 쿠키 사용 안내{'\n'}
+                맞춤형 정보 제공을 위해 쿠키를 사용할 수 있으며, 브라우저 설정을 통해
+                거부할 수 있습니다.{'\n'}
+                {'\n'}
+                [제4조] 개인정보 파기{'\n'}
+                보유 기간 경과 또는 동의 철회 시 지체 없이 파기합니다.{'\n'}
+                {'\n'}
+                [제5조] 제3자 제공{'\n'}
+                법령에 근거한 요청이 아닌 경우 제3자에게 제공하지 않습니다.{'\n'}
+                {'\n'}
+                [제6조] 동의 철회 및 문의{'\n'}
+                동의 철회는 언제든지 가능하며, 문의 사항은 connect2eun@gmail.com으로
+                연락해 주세요.
+              </div>
+            </details>
+            <label className={consentCheckRow}>
+              <input
+                type="checkbox"
+                checked={form.privacyConsent}
+                onChange={(event) => updateField('privacyConsent', event.target.checked)}
+                aria-required="true"
+              />
+              <span className={consentRequired}>(필수)</span>
+              개인정보 이용에 동의합니다.
+            </label>
+          </div>
+        </section>
         <div className={buttonRow}>
           <motion.button
             type="button"
@@ -618,6 +710,8 @@ export const EstimateQuote = () => {
         </div>
           <p className={formSubtitle}>
             * PDF를 다운로드해 메일에 첨부해 주세요.
+              <br />
+            * 모바일인 경우 스크린샷으로 보내주세요.(PC 권장)
               <br />
             * 남겨주신 전화번호로 미팅 일정을 안내드릴게요.
           </p>
@@ -653,6 +747,25 @@ export const EstimateQuote = () => {
         message={toast?.message ?? ''}
         motionConfig={MOTION.toast}
       />
+      {showConsentModal ? (
+        <div className={modalOverlay} role="dialog" aria-modal="true" aria-label="개인정보 동의 필요">
+          <div className={modalCard}>
+            <h4 className={modalTitle}>개인정보 동의가 필요합니다</h4>
+            <p className={modalBody}>
+              PDF를 생성하려면 개인정보 이용 동의에 체크해 주세요.
+            </p>
+            <div className={modalActions}>
+              <button
+                type="button"
+                className={modalButton}
+                onClick={() => setShowConsentModal(false)}
+              >
+                확인
+              </button>
+            </div>
+          </div>
+        </div>
+      ) : null}
     </>
   )
 }

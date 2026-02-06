@@ -55,7 +55,7 @@ export const siteOverrides: SiteConfigOverride = {
         summary:
           '데이터를 근거로 방향을 잡습니다. 타겟·메시지·구조를 정리해 “문의/예약이 가능한 흐름”을 설계해요.',
         icon: 'Compass',
-        category: 'Product Strategy',
+        category: 'Branding',
         bullets: [
           '타겟/포지셔닝/핵심 메시지 1장 정리',
           '페이지 구조·동선·CTA 우선순위 설계',
@@ -153,7 +153,23 @@ export const siteOverrides: SiteConfigOverride = {
       },
     ],
     processSteps: ['진행 단계 1', '진행 단계 2', '진행 단계 3'],
-    values: ['핵심 가치 1', '핵심 가치 2', '핵심 가치 3'],
+    values: [
+      {
+        title: 'Connect',
+        description: '연결은 자연스럽게',
+        image: '/branding/portfolio-1.svg',
+      },
+      {
+        title: 'Clear',
+        description: '가치를 선명하게',
+        image: '/branding/portfolio-2.svg',
+      },
+      {
+        title: 'Commit',
+        description: '책임은 끝까지',
+        image: '/branding/portfolio-3.svg',
+      },
+    ],
     team: [
       { name: '이름', role: '직함' },
       { name: '이름', role: '직함' },

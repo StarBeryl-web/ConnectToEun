@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css'
+import { globalStyle, style } from '@vanilla-extract/css'
 import { vars } from '../../styles/theme.css'
 
 export const contactTokens = {
@@ -214,4 +214,111 @@ export const toastIcon = style({
 export const toastMessage = style({
   fontSize: '14px',
   margin: 0,
+})
+
+export const consentCard = style({
+  display: 'grid',
+  gap: contactTokens.spacing.sm,
+  padding: contactTokens.spacing.md,
+  borderRadius: contactTokens.radiusSm,
+  border: contactTokens.border,
+  backgroundColor: vars.color.background,
+})
+
+export const consentSummary = style({
+  fontSize: '14px',
+  color: vars.color.textMuted,
+  margin: 0,
+  lineHeight: 1.6,
+})
+
+export const consentDetails = style({
+  display: 'grid',
+  gap: contactTokens.spacing.xs,
+})
+
+export const consentDetailsToggle = style({
+  fontSize: '13px',
+  color: vars.color.brandStrong,
+  cursor: 'pointer',
+  listStyle: 'none',
+})
+
+export const consentDetailsContent = style({
+  fontSize: '12px',
+  color: vars.color.textMuted,
+  lineHeight: 1.6,
+  whiteSpace: 'pre-line',
+})
+
+export const consentCheckRow = style({
+  display: 'flex',
+  alignItems: 'center',
+  gap: contactTokens.spacing.xs,
+  fontSize: '14px',
+  color: vars.color.text,
+})
+
+export const consentRequired = style({
+  color: vars.color.brandStrong,
+  fontWeight: 600,
+})
+
+export const modalOverlay = style({
+  position: 'fixed',
+  inset: 0,
+  backgroundColor: 'rgba(10, 12, 24, 0.55)',
+  display: 'grid',
+  placeItems: 'center',
+  zIndex: 60,
+  padding: '20px',
+})
+
+export const modalCard = style({
+  backgroundColor: vars.color.surface,
+  border: contactTokens.border,
+  borderRadius: contactTokens.radius,
+  boxShadow: vars.shadow.md,
+  padding: contactTokens.spacing.lg,
+  maxWidth: '420px',
+  width: '100%',
+  display: 'grid',
+  gap: contactTokens.spacing.sm,
+})
+
+export const modalTitle = style({
+  margin: 0,
+  fontSize: '18px',
+  color: vars.color.text,
+})
+
+export const modalBody = style({
+  margin: 0,
+  fontSize: '14px',
+  color: vars.color.textMuted,
+  lineHeight: 1.6,
+})
+
+export const modalActions = style({
+  display: 'flex',
+  justifyContent: 'flex-end',
+  gap: contactTokens.spacing.sm,
+})
+
+export const modalButton = style({
+  padding: '10px 16px',
+  borderRadius: contactTokens.radiusSm,
+  border: 'none',
+  backgroundColor: vars.color.brand,
+  color: '#fff',
+  fontWeight: 600,
+  cursor: 'pointer',
+})
+
+globalStyle(`${formCard} input[type="checkbox"]`, {
+  accentColor: vars.color.brand,
+})
+
+globalStyle(`${formCard} input[type="radio"]`, {
+  accentColor: vars.color.brand,
 })

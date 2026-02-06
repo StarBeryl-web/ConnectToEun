@@ -40,6 +40,33 @@ export const blogSearch = style({
   height: '44px',
 })
 
+export const blogSearchRow = style({
+  display: 'flex',
+  gap: '8px',
+  flex: '1 1 320px',
+  alignItems: 'center',
+})
+
+export const blogSearchButton = style({
+  height: '44px',
+  padding: '0 14px',
+  borderRadius: '12px',
+  border: `1px solid ${vars.color.brand}`,
+  backgroundColor: vars.color.brand,
+  color: '#ffffff',
+  fontSize: '13px',
+  fontWeight: 600,
+  cursor: 'pointer',
+  display: 'none',
+  '@media': {
+    '(max-width: 720px)': {
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+  },
+})
+
 export const blogSelect = style({
   minWidth: '160px',
   flex: '0 0 200px',
@@ -47,9 +74,12 @@ export const blogSelect = style({
 
 export const blogTagsRow = style({
   display: 'flex',
-  flexWrap: 'wrap',
+  flexWrap: 'nowrap',
   gap: '8px',
   alignItems: 'center',
+  overflowX: 'auto',
+  paddingBottom: '4px',
+  WebkitOverflowScrolling: 'touch',
 })
 
 export const blogTagFilter = style({
@@ -63,6 +93,7 @@ export const blogTagFilter = style({
   height: '36px',
   display: 'inline-flex',
   alignItems: 'center',
+  whiteSpace: 'nowrap',
 })
 
 export const blogTagFilterActive = style({
