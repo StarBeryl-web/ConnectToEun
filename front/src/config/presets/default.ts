@@ -187,7 +187,20 @@ export const defaultPreset: SiteConfig = {
       },
     ],
     processSteps: ['진행 단계 1', '진행 단계 2', '진행 단계 3'],
-    values: ['핵심 가치 1', '핵심 가치 2', '핵심 가치 3'],
+    values: [
+      {
+        title: '핵심 가치 1',
+        description: '가치에 대한 설명을 입력하세요.',
+      },
+      {
+        title: '핵심 가치 2',
+        description: '가치에 대한 설명을 입력하세요.',
+      },
+      {
+        title: '핵심 가치 3',
+        description: '가치에 대한 설명을 입력하세요.',
+      },
+    ],
     team: [
       { name: '이름', role: '직함' },
       { name: '이름', role: '직함' },

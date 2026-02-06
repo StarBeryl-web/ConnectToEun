@@ -177,15 +177,6 @@ export const EstimateQuote = () => {
     })
   }
 
-  const toggleFeature = (feature: string) => {
-    setForm((prev) => {
-      const next = new Set(prev.features)
-      if (next.has(feature)) next.delete(feature)
-      else next.add(feature)
-      return { ...prev, features: Array.from(next) }
-    })
-  }
-
   const showToast = (variant: ToastState['variant'], message: string) => {
     setToast({ id: Date.now(), variant, message })
   }
