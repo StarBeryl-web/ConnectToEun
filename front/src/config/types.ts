@@ -60,6 +60,7 @@ export type SiteConfig = {
     logoImage?: string
     ogImage: string
     heroImage: string
+    aboutHeroImage?: string
   }
   contact: {
     phone: string

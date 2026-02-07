@@ -9,6 +9,7 @@ export const defaultPreset: SiteConfig = {
     logoImage: '/branding/logo.svg',
     ogImage: '/branding/og.svg',
     heroImage: '/branding/hero.svg',
+    aboutHeroImage: '/branding/hero.svg',
   },
   contact: {
     phone: '02-0000-0000',

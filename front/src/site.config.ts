@@ -10,6 +10,7 @@ export const siteOverrides: SiteConfigOverride = {
     logoText:'',
     logoImage: '/branding/logo.svg',
     heroImage: '',
+    aboutHeroImage: '/branding/about_hero.png',
     ogImage: ''
   },
   contact: {

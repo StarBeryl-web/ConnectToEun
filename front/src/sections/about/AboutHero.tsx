@@ -83,9 +83,10 @@ export const AboutHero = () => {
   }, [])
 
   const heroImageSrc =
+    siteConfig.brand.aboutHeroImage ||
     siteConfig.brand.heroImage ||
     siteConfig.data.portfolio[0]?.coverImage ||
-    '/branding/portfolio-1.svg'
+    '/branding/about_hero.png'
   const headline =
     siteConfig.brand.tagline || '가치를 선명하게\n새로운 기회로 연결'
 
