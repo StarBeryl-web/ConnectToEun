@@ -354,6 +354,76 @@ export const storyMeta = style({
   fontSize: '13px',
 })
 
+export const timelineList = style({
+  position: 'relative',
+  display: 'grid',
+  gap: '24px',
+  paddingLeft: '28px',
+  '::before': {
+    content: '',
+    position: 'absolute',
+    top: '4px',
+    bottom: '4px',
+    left: '10px',
+    width: '1px',
+    backgroundColor: 'rgba(230, 224, 217, 0.22)',
+    zIndex: 0,
+    pointerEvents: 'none',
+  },
+})
+
+export const timelineItem = style({
+  position: 'relative',
+  zIndex: 1,
+  display: 'grid',
+  gridTemplateColumns: '130px minmax(0, 1fr)',
+  gap: '24px',
+  alignItems: 'start',
+  '@media': {
+    '(max-width: 720px)': {
+      gridTemplateColumns: '1fr',
+      gap: '8px',
+      paddingLeft: '8px',
+    },
+  },
+})
+
+export const timelineDot = style({
+  position: 'absolute',
+  left: '4px',
+  top: '2px',
+  width: '12px',
+  height: '12px',
+  borderRadius: '999px',
+  backgroundColor: vars.color.brand,
+  boxShadow: vars.shadow.sm,
+  zIndex: 1,
+})
+
+export const timelineDate = style({
+  fontSize: '12px',
+  textTransform: 'uppercase',
+  letterSpacing: '0.12em',
+  color: vars.color.textMuted,
+  paddingLeft: '18px',
+  lineHeight: 1.4,
+})
+
+export const timelineContent = style({
+  display: 'grid',
+  gap: '6px',
+})
+
+export const timelineTitle = style({
+  fontSize: '16px',
+  lineHeight: 1.6,
+})
+
+export const timelineIssuer = style({
+  color: vars.color.textMuted,
+  fontSize: '13px',
+})
+
 export const newsList = style({
   display: 'grid',
   gap: '16px',
